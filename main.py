@@ -1,5 +1,5 @@
 import telebot
-
+#Важный коментарий
 bot = telebot.TeleBot('1655026971:AAE5-t08Tdvqv9-3pXXuL8EFV5_INvxZnzc')
 
 
