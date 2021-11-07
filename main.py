@@ -11,9 +11,6 @@ def handle_text_messages(message):
         bot.send_message(message.from_user.id, "Я тестовый чатбот для учебного примера.")
     elif message.text == "Как тебя зовут?":
         bot.send_message(message.from_user.id, "Меня зовут MyFirstTestBot.")
-    elif message.text == "Что ты умеешь?":
-        bot.send_message(message.from_user.id,
-                         "Я умею отвечать на несколько простых вопросов - кто я, как меня зовут и что я умею делать.")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши что-то другое!!!")
 
