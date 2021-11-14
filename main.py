@@ -12,7 +12,7 @@ def handle_text_messages(message):
     elif message.text == "Как тебя зовут?":
         bot.send_message(message.from_user.id, "Меня зовут MyFirstTestBot.")
     else:
-        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши что-то другое!!!")
+        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши что-то другое")
 
 
 bot.polling(none_stop=True, interval=0)
