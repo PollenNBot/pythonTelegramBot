@@ -8,13 +8,13 @@ def handle_text_messages(message):
     if message.text == "Привет!":
         bot.send_message(message.from_user.id, "Привет")
     elif message.text == "Кто ты?:)":
-        bot.send_message(message.from_user.id, "Я тестовый чатбот для учебного примера.")
+        bot.send_message(message.from_user.id, "Я тестовый чатбот для учебного примера")
     elif message.text == "Как тебя зовут?":
         bot.send_message(message.from_user.id, "Меня зовут MyFirstTestBot.")
     elif message.text == "Сколько тебе лет?":
-        bot.send_message(message.from_user.id, "Мне 14")
+        bot.send_message(message.from_user.id, "Мне лень отвечать")
     else:
-        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши что-то другое")
+        bot.send_message(message.from_user.id, "Эээээ... Что? Я не понимаю((((")
 
 
 bot.polling(none_stop=True, interval=0)
