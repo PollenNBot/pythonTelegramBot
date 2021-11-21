@@ -19,3 +19,5 @@ async def get_data():
             attributes[columns[0].get_text()] = columns[len(columns)-1].get_text()
 
     return attributes
+
+executor.start_polling(dp, skip_updates=True)
