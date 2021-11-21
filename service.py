@@ -20,4 +20,4 @@ async def get_data():
 
     return attributes
 
-executor.start_polling(dp, skip_updates=True)
+

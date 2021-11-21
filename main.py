@@ -26,4 +26,4 @@ async def buttonAnswer(call: types.CallbackQuery):
     await call.answer(text="Спасибо за ответ", show_alert=False)
 
 
-bot.polling(none_stop=True, interval=0)
+executor.start_polling(dp, skip_updates=True)
