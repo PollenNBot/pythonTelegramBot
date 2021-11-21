@@ -1,9 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 
+URL = "https://www.meteonova.ru/allergy/27553-Nizhniy_Novgorod.htm"
+
 async def get_data():
-    url = "https://www.meteonova.ru/allergy/27553-Nizhniy_Novgorod.htm"
-    result = requests.get(url, headers={
+
+    result = requests.get(URL, headers={
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'})
 
     soup = BeautifulSoup(result.text, 'html.parser')
