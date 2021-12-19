@@ -7,11 +7,13 @@ bot = Bot(token=TOKEN, parse_mode="HTML")
 
 dp = Dispatcher(bot)
 
+
 @dp.message_handler(commands="start")
 async def cmd_random(message: types.Message):
     keyboard = types.InlineKeyboardMarkup()
     keyboard.add(types.InlineKeyboardButton(text=GET_WEATHER, callback_data="get_data"))
     await message.answer(START_MESSAGE, reply_markup=keyboard)
+
 
 @dp.callback_query_handler(text="get_data")
 async def buttonAnswer(call: types.CallbackQuery):
