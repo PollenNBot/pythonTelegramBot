@@ -36,7 +36,7 @@ class Database:
         cursor.execute(query)
         records = cursor.fetchone()
         cursor.close()
-        return records
+        return records[0]
 
 
 database = Database(name="analytics")
