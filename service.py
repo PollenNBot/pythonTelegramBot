@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import database
 
+URL = "https://www.meteonova.ru/allergy/27553-Nizhniy_Novgorod.htm"
+
 async def get_data():
     # url = "https://www.meteonova.ru/allergy/27553-Nizhniy_Novgorod.htm"
     # result = requests.get(url, headers={
@@ -27,4 +29,4 @@ async def get_data():
 async def save_data():
     information_metionova = await get_data()
     for key, value in information_metionova.items():
-        database.insert_all_analytics(key, value)
+        await database.database.insert_all_analytics(key, value)
