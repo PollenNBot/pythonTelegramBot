@@ -1,10 +1,17 @@
+import asyncio
+
 from aiogram import Bot, Dispatcher, executor, types
 from config import TOKEN
 import service as s
+import time
 
 bot = Bot(token=TOKEN, parse_mode="HTML")
 
 dp = Dispatcher(bot)
+
+my_time = [18, 25]
+
+check_time = True
 
 @dp.message_handler(commands="start")
 async def cmd_random(message: types.Message):
@@ -25,5 +32,20 @@ async def buttonAnswer(call: types.CallbackQuery):
     await call.message.answer(resp)
     await call.answer(text="Спасибо за ответ", show_alert=False)
 
+async def take_data_from_meteonova():
+    global check_time
+    while True:
+        time_now = time.struct_time[3], time.struct_time[4]
+        if my_time == time_now:
+            if check_time:
+                check_time = False
+                await s.save_data()
+        else:
+            check_time = True
 
-executor.start_polling(dp, skip_updates=True)
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    loop.create_task(take_data_from_meteonova())
+    executor.start_polling(dp)
+
